@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B9A6-retro-forum-nuhainul</title>
+
+    <!-- tailwindcss & daisyui -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.6.0/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap"
+        rel="stylesheet">
+
+    <style>
+        .font-mulish {
+            font-family: "Mulish", sans-serif;
+        }
+
+        body {
+            font-family: "Mulish", sans-serif;
+            /* color: #030712; */
+            /* background-color: wheat; */
+            background-color: white;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header id="header" class="">
+        <!-- header section -->
+        <!-- navbar sub section -->
+        <div class="navbar bg-base-100 mt-12 container mx-auto">
+            <div class="navbar-start">
+                <div class="dropdown">
+                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h8m-8 6h16" />
+                        </svg>
+                    </div>
+                    <ul tabindex="0"
+                        class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                        <li class="tooltip" data-tip="Home"><a><img src="./images/home.svg" alt="Home"
+                                    class="rounded-full border-gray-300 border"></a></li>
+                        <li class="tooltip" data-tip="Edit"><a><img src="./images/edit.svg" alt="Edit"
+                                    class="rounded-full border-gray-300 border"></a></li>
+                        <li class="tooltip" data-tip="Add"><a><img src="./images/add.svg" alt="Add"
+                                    class="rounded-full border-gray-300 border"></a></li>
+                        <li class="tooltip" data-tip="Bookmark"><a><img src="./images/flag.svg" alt="Bookmark"
+                                    class="rounded-full border-gray-300 border"></a></li>
+                    </ul>
+                </div>
+                <a class="btn btn-ghost text-4xl font-black fontMulish">Bangali ReTro</a>
+            </div>
+            <!-- <div class="navbar-center hidden lg:flex">
+                <ul class="menu menu-horizontal px-1">
+                    <li class="tooltip" data-tip="Home"><a><img src="./images/home.svg" alt="Home"
+                                class="rounded-full border-gray-300 border"></a></li>
+                    <li class="tooltip" data-tip="Edit"><a><img src="./images/edit.svg" alt="Edit"
+                                class="rounded-full border-gray-300 border"></a></li>
+                    <li class="tooltip" data-tip="Add"><a><img src="./images/add.svg" alt="Add"
+                                class="rounded-full border-gray-300 border"></a></li>
+                    <li class="tooltip" data-tip="Bookmark"><a><img src="./images/flag.svg" alt="Bookmark"
+                                class="rounded-full border-gray-300 border"></a></li>
+                </ul>
+            </div> -->
+            <div class="navbar-end">
+                <div class="navbar-center hidden lg:flex">
+                    <ul class="menu menu-horizontal px-1">
+                        <li class="tooltip" data-tip="Home"><a><img src="./images/home.svg" alt="Home"
+                                    class="rounded-full border-gray-300 border"></a></li>
+                        <li class="tooltip" data-tip="Edit"><a><img src="./images/edit.svg" alt="Edit"
+                                    class="rounded-full border-gray-300 border"></a></li>
+                        <li class="tooltip" data-tip="Add"><a><img src="./images/add.svg" alt="Add"
+                                    class="rounded-full border-gray-300 border"></a></li>
+                        <li class="tooltip" data-tip="Bookmark"><a><img src="./images/flag.svg" alt="Bookmark"
+                                    class="rounded-full border-gray-300 border"></a></li>
+                    </ul>
+                </div>
+
+                <a class="btn bg-[#797DFC] text-white rounded-full w-28 h-14">Sign In</a>
+            </div>
+        </div>
+
+        <!-- hero sub section -->
+        <div class="hero container mx-auto bg-[#12132D] bg-opacity-90 rounded-3xl my-12 pt-20 pb-20"
+            style="background-image: url(./images/bgbanner.png);">
+            <!-- <div class="hero-content flex-col lg:flex-row-reverse"> -->
+            <div class="hero-content block lg:flex lg:gap-16 lg:justify-between">
+                <div class="max-w-md">
+                    <h1 class="mb-5 text-5xl font-black text-white py-2">
+                        <span>Welcome to the </span>
+                        <br>
+                        <span class="text-[#797DFC]">ReTro</span>
+                        <span> Forum</span>
+                    </h1>
+                    <p class="mb-5 text-gray-300">Share your favorite opinion and win and wp forum coffee mug!</p>
+                    <!-- input field component -->
+                    <label class="input input-bordered flex items-center gap-2 m-0 rounded-full">
+                        <input id="searchField" type="text" class="grow text-base font-medium"
+                            placeholder="Search here anything" />
+                        <button onclick="handlingSearch()" id=""
+                            class="badge badge-info bg-[#797DFC] text-white w-32 h-11 text-xl font-bold">Search</button>
+                    </label>
+                </div>
+                <!-- <img src="./images/joinforum.png" class="max-w-sm rounded-lg shadow-2xl" /> -->
+                <div id="forumStatsContainer"
+                    class="grid grid-cols-2 bg-white rounded-3xl py-16 px-11 text-2xl gap-x-6 font-medium max-w-screen-md justify-between text-gray-700 mt-10">
+                    <div id="ghor1" class="">Registered Users</div>
+                    <div id="ghor2" class="text-right">01</div>
+                    <div id="ghor3" class="">Forum</div>
+                    <div id="ghor4" class="text-right">05</div>
+                    <div id="ghor5" class="">Topics</div>
+                    <div id="ghor6" class="text-right">01</div>
+                    <div id="ghor7" class="">Replies</div>
+                    <div id="ghor8" class="text-right">01</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="main" class="">
+        <!-- let's discuss section -->
+        <div id="letsDiscussContainer" class="container mx-auto mb-24">
+            <!-- let's discuss intro sub section -->
+            <div id="letsDiscussIntro" class="text-center mb-12 max-w-[690px] mx-auto">
+                <h2 id="" class="text-4xl font-black pt-6">Let’s Discuss</h2>
+                <p id="" class="text-lg pt-6">Yes, you can run unit tests and view the results directly within the app.
+                    The
+                    integrated testing features allow for a streamlined.</p>
+            </div>
+
+            <!-- loading spinner starts -->
+            <div id="loadSpinnerContainer" class="container mx-auto mb-14 hidden">
+                <div id="loadSpinner" class="m-4 text-center">
+                    <span class="loading loading-spinner text-primary"></span>
+                    <span class="loading loading-spinner text-secondary"></span>
+                    <span class="loading loading-spinner text-accent"></span>
+                </div>
+            </div>
+            <!-- loading spinner ends -->
+
+            <!-- error alert starts -->
+            <div role="alert" class="alert alert-warning mx-auto mb-10 hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                </svg>
+                <span class="mx-auto font-bold">Warning: Invalid category searched!</span>
+            </div>
+            <!-- error alert ends -->
+
+            <!-- let's discuss functional sub section starts -->
+            <div id="letsDiscussPostResultsContainer"
+                class="container mx-auto rounded-3xl flex flex-col md:flex-row lg:justify-between mb-6">
+                <!-- let's discuss functional sub-child-left -->
+                <div id="letsDiscussPostResults">
+                    <!-- dynamic card format s -->
+                    <div class="p-4 lg:w-[726px] w-[100%] mx-auto bg-[#12132D0D] rounded-2xl m-1 border border-green-400 lg:ml-0 mb-6" id="">
+
+                        <div id="" class="flex gap-4">
+                            <!-- online obotar -->
+                            <div id="obotarContainer" class="">
+                                <div class="avatar online">
+                                    <div class="w-24 rounded-xl">
+                                        <img
+                                            src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="" class="w-[90%]">
+                                <div id="" class="flex gap-4 font-medium justify-end">
+                                    <span id="" class=""># </span>
+                                    <span id="" class="">${category}</span>
+
+                                    <span id="" class="">Author : </span>
+                                    <span id="" class="">${authorName}</span>
+                                </div>
+
+                                <div id="" class="border-b border-dashed border-[#12132D40]">
+                                    <p id="" class="font-bold pt-3 pb-4">10 Kids Unaware of Their Halloween Costume</p>
+                                    <p id="" class="pb-5">It’s one thing to subject yourself to ha Halloween costume
+                                        mishap
+                                        because, hey that’s your prerogative</p>
+                                </div>
+
+                                <div id="" class="flex justify-between">
+                                    <div id="postStatsContainer" class="flex items-center gap-2">
+                                        <div id="" class="flex gap-1">
+                                            <img src="./images/comment.svg" alt="" height="21px" width="21px">
+                                            <span id="" class=""> ${commentCount}</span>
+                                        </div>
+                                        <div id="" class="flex gap-1">
+                                            <img src="./images/view.svg" alt="" height="21px" width="21px">
+                                            <span id="" class=""> ${viewCount}</span>
+                                        </div>
+                                        <div id="" class="flex gap-1">
+                                            <img src="./images/time.svg" alt="" height="21px" width="21px">
+                                            <span id="" class=""> ${timeCount}</span>
+                                        </div>
+                                    </div>
+
+                                    <div id="" class="pothitoButtonContainer">
+                                        <button onclick="handlingdynamicPothito(title, viewCount)" class="btn pothitoButton"><img src="./images/markread.svg"
+                                                alt=""></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div><!-- dynamic card format e -->
+
+                </div>
+
+                <!-- let's discuss functional sub-child-right -->
+                <div id="pothitoOuterContainer" class="">
+                    <div id="pothitoInnerContainer"
+                        class="p-8 lg:w-[474px] w-[100%] mx-auto bg-[#12132D0D] rounded-2xl m-1 lg:mr-0">
+
+                        <div id="" class="my-6 pb-4 flex justify-between">
+                            <div id="" class="font-bold text-xl">Title</div>
+                            <div id="" class="flex text-gray-500">
+                                <div id="" class=""><img src="./images/greentick.svg" alt=""></div>
+                                <div id="" class="">&nbsp; Mark as read</div>
+                                <div id="" class="">
+                                    <span id="" class="">&nbsp; (</span>
+                                    <span id="pothitoCountSpan" class="">0</span>
+                                    <span id="" class="">)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="dynamicPothitoDivContainer">
+                            <section class="hidden mb-6 bg-white rounded-2xl p-8 font-inter text-base flex">
+                                <div id="" class="max-w-[212px] font-semibold">
+                                    <p id="" class="dynamicPothitoDiv">10 Kids Unaware of Their Halloween Costume</p>
+                                </div>
+    
+                                <div id="" class="viewCount flex items-center gap-4">
+                                    <img src="./images/view.svg" alt="">
+                                    <p id="" class="">${viewCount}</p>
+                                </div>
+                            </section>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            <!-- let's discuss functional sub section ends -->
+
+        </div>
+
+        <!-- join our forum section component -->
+        <!-- <div class="hero min-h-screen bg-base-200 container mx-auto mb-24"> -->
+        <div class="container mx-auto bg-[#12132D] bg-opacity-90 rounded-3xl pt-2 pb-2 mb-24">
+            <div class="hero-content flex-col lg:flex-row-reverse">
+                <img src="./images/joinforum.png" class="max-w-sm rounded-lg shadow-2xl mt-4" />
+                <div class="py-20 pl-20 max-w-[653px]">
+                    <h2 class="text-5xl font-black text-white">Join Our Forum</h2>
+                    <p class="py-6 text-lg text-gray-300">Share your favorite opinion and win and wp forum coffee mug!
+                        Yes, you can run unit
+                        tests
+                        and view the results directly within the app.</p>
+                    <button class="btn btn-primary text-xl font-bold bg-[#797DFC] rounded-3xl px-10">Registered
+                        Now</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- latest posts section -->
+        <div id="latestPostsContainer" class="container mx-auto mb-24 pb-6">
+            <!-- latest posts intro sub section -->
+            <div id="latestPostsIntro" class="text-center mb-12 max-w-[690px] mx-auto">
+                <h2 id="" class="text-4xl font-black pt-6">Latest Posts</h2>
+                <p id="" class="text-lg pt-6">Yes, you can run unit tests and view the results directly within the app.
+                    The
+                    integrated
+                    testing features allow for a streamlined.</p>
+            </div>
+            <!-- latest posts functional sub section -->
+            <div id="latestPostCardsContainer" class="grid lg:grid-cols-3 grid-cols-1 gap-y-6 lg:gap-y-0">
+                <!-- latest post card-gulo ekhane dynamically append korbo -->
+            </div>
+        </div>
+        </div>
+
+    </main>
+
+    <footer class="footer footer-center p-10 bg-base-200 text-base-content rounded mt-8 pb-10">
+        <p class="pt-10"><img src="./images/logo.png" alt="ReTro"></p>
+        <p class="grid grid-flow-col gap-4 max-w-[605px]">
+            Contrary to popular belief, it is not simply a random text. It has roots in a piece of classical
+            Latin literature from 45 BC
+        </p>
+        <nav>
+            <div class="grid grid-flow-col gap-4">
+                <img src="./images/twitter.png" alt="twitter">
+                <img src="./images/facebook.svg" alt="facebook">
+                <img src="./images/instagram.png" alt="instagram">
+                <img src="./images/github.svg" alt="github">
+            </div>
+        </nav>
+
+        <hr class="w-full h-[1px] mx-auto my-2 bg-gray-300 border-0 rounded md:my-2 dark:bg-gray-300">
+
+        <aside>
+            <p class="text-[#12132D80] text-base">2024, All Rights Reserved.</p>
+        </aside>
+    </footer>
+
+    <!-- javascript scripts -->
+    <script src="./script.js"></script>
+</body>
+
+</html>
